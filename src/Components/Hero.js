@@ -11,10 +11,12 @@ const Hero = () => {
   //   const [score, setScore] = useState(0);
   const score = useSelector((state) => state.score.value);
   const dispatch = useDispatch();
+  const [scoreCount, setScoreCount] = useState(0);
+  let count = 0;
 
   const result = document.getElementById("result");
   const container = document.getElementById("container");
-  let count = 0;
+
   const [computerInput, setComputerInput] = useState("");
   const [user, setUser] = useState("");
   const [userImg, setUserImg] = useState("");
@@ -60,18 +62,21 @@ const Hero = () => {
     switch (name) {
       case "rock":
         setUserImg(rock);
+        // increment();
         container.classList.add("hidden");
         result.classList.remove("hidden");
         result.classList.add("block");
         break;
       case "paper":
         setUserImg(paper);
+        // increment();
         container.classList.add("hidden");
         result.classList.remove("hidden");
         result.classList.add("block");
         break;
       case "scissors":
         setUserImg(scissors);
+        // increment();
         container.classList.add("hidden");
         result.classList.remove("hidden");
         result.classList.add("block");
@@ -79,9 +84,21 @@ const Hero = () => {
     }
   };
 
-  const increment = () => {
-    dispatch(increment());
-  };
+  // const increment = () => {
+  //   if (user === "rock" && computerInput === "scissors") {
+  //     count+=1;
+  //     setScoreCount(count);
+  //     // dispatch(increment());
+  //   } else if (user === "paper" && computerInput === "rock") {
+  //     count+=1;
+  //     setScoreCount(count);
+  //     // dispatch(increment());
+  //   } else if (user === "scissors" && computerInput === "paper") {
+  //     count+=1;
+  //     setScoreCount(count);
+  //     // dispatch(increment());
+  //   }
+  // };
 
   const giveResult = () => {
     if (user === "rock" && computerInput === "scissors") {
@@ -101,6 +118,14 @@ const Hero = () => {
     setComputerInputState();
   }, []);
 
+  const playAgain = () => {
+    setComputerInputState();
+    result.classList.remove("block");
+    result.classList.add("hidden");
+    container.classList.remove("hidden");
+    container.classList.add("block");
+  };
+
   return (
     <body className="h-[100vh] bg-gradient-to-br from-[#03203C] to-[#120E43] p-10">
       <div className="flex justify-between border-2 border-[#758283] rounded-xl w-[600px] p-4 mx-auto">
@@ -108,7 +133,7 @@ const Hero = () => {
         <div className="bg-[#CAD5E2]  pt-1 text-center rounded-xl">
           <p className="text-xs align-text-top text-[#03203C]">SCORE</p>
           <p className="text-6xl font-semibold text-[#758283] pl-6 pr-6 pb-4 ">
-            {score}
+            {scoreCount}
           </p>
         </div>
       </div>
@@ -157,7 +182,7 @@ const Hero = () => {
 
       <div
         id="result"
-        className="hidden flex justify-around items-center mt-28"
+        className="flex justify-around hidden items-center mt-28"
       >
         <div className="flex flex-col items-center">
           <img
@@ -168,9 +193,17 @@ const Hero = () => {
           <p className="text-[#CAD5E2] text-3xl mt-3">AI</p>
         </div>
 
-        <span className="text-5xl font-semibold text-[#CAD5E2]">
-          {giveResult()}
-        </span>
+        <div className="text-center">
+          <div className="text-5xl font-semibold text-[#CAD5E2]">
+            {giveResult()}
+          </div>
+          <button
+            className="text-2xl text-[#242B2E] font-semibold bg-[#758283] p-2 mt-3 rounded-md"
+            onClick={playAgain}
+          >
+            Play Again
+          </button>
+        </div>
 
         <div className="flex flex-col items-center">
           <img

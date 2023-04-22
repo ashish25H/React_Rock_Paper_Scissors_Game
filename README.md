@@ -2,7 +2,7 @@
 ##  Rock Paper Scissors Game
 
 # Live link
-[Live link here](https://musical-kashata-d3acf1.netlify.app)
+[Live link here](https://lambent-salmiakki-ed189f.netlify.app)
 
 # Description
 I built a Rock Paper Scissors Game in this game you also see your score on screen and you can play multiple times without refreshing page.

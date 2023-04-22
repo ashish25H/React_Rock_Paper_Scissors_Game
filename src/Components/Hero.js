@@ -146,7 +146,7 @@ const Hero = () => {
 
   return (
     <body className="flex flex-col items-center pt-16 p-0 h-[100vh]  w-[100vw] sm:h-[100vh] bg-gradient-to-br from-[#03203C] to-[#120E43] sm:p-10">
-      <div className="flex w-[100vw] p-2 m-2  sm:flex justify-between border-2 border-[#758283] rounded-xl sm:w-[600px] sm:p-4 sm:mx-auto">
+      <div className="flex p-2 w-[90vw]  sm:flex justify-between border-2 border-[#758283] rounded-xl sm:w-[600px] sm:p-4 sm:mx-auto">
         <img className="w-[15%] " src={logo} alt="logo" />
         <div className="bg-[#CAD5E2]  pt-1 text-center rounded-xl">
           <p className="text-xs align-text-top text-[#03203C]">SCORE</p>

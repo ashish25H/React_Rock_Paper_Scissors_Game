@@ -18,4 +18,4 @@ I built a Rock Paper Scissors Game in this game you also see your score on scree
 This app needs a good internet connection and a browser.
 
 # Version
-2.0
+2.1

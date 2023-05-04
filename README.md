@@ -14,7 +14,7 @@ I built a Rock Paper Scissors Game in this game you also see your score on scree
 - React
 - Tailwind CSS
 
-# 
+# Requirements
 This app needs a good internet connection and a browser.
 
 # Version
